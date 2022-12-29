@@ -215,11 +215,29 @@ class Snippet{
 	}
 
 	draw(context, scale, xStart, y){
+		this.draw2(context, scale, xStart-1, y-1, 96)
+		this.draw2(context, scale, xStart, y-1, 96)
+		this.draw2(context, scale, xStart+1, y-1, 96)
+		
+		this.draw2(context, scale, xStart-1, y, 96)
+		this.draw2(context, scale, xStart+1, y, 96)
+		
+		this.draw2(context, scale, xStart-1, y+1, 96)
+		this.draw2(context, scale, xStart, y+1, 96)
+		this.draw2(context, scale, xStart+1, y+1, 96)
+
+		return this.draw2(context, scale, xStart, y, 0)
+	}
+	
+	draw2(context, scale, xStart, y, yOfs){
 		var x=xStart
 		var last = 0
 		var lastchar = -1 
 		var slope_offset = this.font.info.slope_offset
 		for(let char of this.parse()){
+			if('*' in char['unadvance-after']){
+				x-= char['unadvance-after']['*']
+			}
 			if(lastchar in char['unadvance-after']){
 				x-= char['unadvance-after'][lastchar]
 			}
@@ -230,7 +248,7 @@ class Snippet{
 			context.drawImage(
 				this.font.image,
 				minfo.char.x,
-				minfo.char.y,
+				minfo.char.y + yOfs,
 				minfo.char.w,
 				minfo.char.h,
 				minfo.x*minfo.scale,
@@ -246,6 +264,7 @@ class Snippet{
 		}
 		return x + last
 	}
+
 
 	parse(fontOriginY=0){
 		var out=[]

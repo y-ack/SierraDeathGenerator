@@ -1233,6 +1233,16 @@ var generators={
 		'added':'2020-04-04',
 		'gameinfo':'https://www.mobygames.com/game/kabuki-klash'
 	},
+	'landmakr':{
+		'title': 'Land Maker',
+		'source':'Taito',
+		'sourceurl':'https://en.wikipedia.org/wiki/Taito',
+		'defaulttext':"You understand me.\nBad Iuck for you.",
+		'platform':'arcade',
+		'year':'1998',
+		'added':'2022-12-26',
+		'gameinfo':'https://www.arcade-museum.com/game_detail.php?game_id=8377',
+	},
 	'lastblade2':{
 		'title': 'Last Blade 2',
 		'source':'SNK',
