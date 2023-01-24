@@ -684,9 +684,30 @@
 		"unadvance-after": {
 			"*": -1
 		},
-		"unadvance": 0		
+		"unadvance": 0
 	},
 
+	"8220": {
+		"x": 176,
+		"y": 80,
+		"w": 6,
+		"h": 16,
+		"unadvance-after": {
+			"*": -2
+		},
+		"unadvance": -1
+	},
+	"8221": {
+		"x": 208,
+		"y": 80,
+		"w": 6,
+		"h": 16,
+		"unadvance-after": {
+			"*": -2
+		},
+		"unadvance": -1
+	},
+	
 	"91": {
 		"x": 0,
 		"y": 0,
